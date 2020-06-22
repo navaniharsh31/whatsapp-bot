@@ -29,7 +29,7 @@ def format():
 print("*** WhatsApp Bot started ***")
 format()
 
-driver = webdriver.Chrome()
+driver = webdriver.Firefox()
 
 time.sleep(3)
 driver.get("https://web.whatsapp.com")
