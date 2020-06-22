@@ -37,7 +37,7 @@ driver.get("https://web.whatsapp.com")
 with open("numbers.txt", "r") as numbers:
     for number in numbers:
         number = number.strip()
-        if len(number) < 11:
+        if len(number) < 7 or len(number) > 13:
             print("Invalid Number")
         else:
             driver.get("https://web.whatsapp.com/send?phone=" + number)
