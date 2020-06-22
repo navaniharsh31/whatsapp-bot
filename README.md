@@ -13,5 +13,5 @@ PS- Change the driver code according to your web browser.
 1. Add all the numbers in the **numbers.txt**.
   The phone numbers should be on a new line and **must** have the country code **without** "**+**" or **0**
 2. Paste in the message in the **message.txt** file. 
-    **It should not contain any emojis**
+    **Chromedriver does not support emojis, use firefox instead**
 3. Run **whatsapp-bot.py**
