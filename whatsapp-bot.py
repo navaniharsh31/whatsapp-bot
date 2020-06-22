@@ -11,14 +11,13 @@ from selenium.webdriver.support    import expected_conditions as EC
 
 from selenium import webdriver
 
-from webdriver_manager.chrome import ChromeDriverManager
 
 open_file = functools.partial(open, encoding='utf8')
 
 def format():
     message = open_file('message.txt', 'r').readlines()
     formatted = ''
-    
+
     for i in range(len(message)):
         formatted += message[i].rstrip('\n') + " " + "\\n"
 
@@ -30,9 +29,7 @@ def format():
 print("*** WhatsApp Bot started ***")
 format()
 
-driver = webdriver.Chrome(
-    ChromeDriverManager().install()    
-)
+driver = webdriver.Chrome()
 
 time.sleep(3)
 driver.get("https://web.whatsapp.com")
@@ -46,13 +43,13 @@ with open("numbers.txt", "r") as numbers:
             driver.get("https://web.whatsapp.com/send?phone=" + number)
             element = WebDriverWait(driver, 20).until(
                 EC.presence_of_element_located(
-                    (By.XPATH, 
+                    (By.XPATH,
                     '//*[@id="main"]/footer/div[1]/div[2]/div/div[2]')
                 )
             )
             message_box = driver.find_element_by_xpath(
                 '//*[@id="main"]/footer/div[1]/div[2]/div/div[2]'
-            ) 
+            )
             for line in open_file(
                 "message_formatted.txt",
                 "r",

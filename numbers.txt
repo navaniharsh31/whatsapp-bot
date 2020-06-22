@@ -1,1 +1,1 @@
-Numbers should be in +91 format or similar to your country code.
+91xxxxxxxxxx
